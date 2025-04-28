@@ -28,29 +28,21 @@ const Cards = () => {
     },
   ];
   return (
-    <div className="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ml-10">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 w-full">
       {cards.map((card) => (
         <div
           key={card.title}
-          className={`text-white rounded-lg 
-            max-w-100 min-h-55 p-6 shadow-lg 
-            flex items-center justify-between md:gap-3 ${card.bg}`}
+          className={`text-white relative rounded-lg p-6 shadow-lg 
+            flex flex-col justify-between  ${card.bg}`}
         >
           <div className="mb-5 px-10 space-y-5">
-            <p className="text-sm uppercase tracking-wide">{card.title}</p>
+            <p className="text-sm uppercase tracking-wide mb-2">{card.title}</p>
             <h2 className="text-2xl font-bold">{card.value}</h2>
           </div>
-          <div className="relative">
-            <div>
-              <div className="text-white bottom-4 absolute -right-5">
+              <div className=" absolute right-4 animate-pulse">
                 {card.icon}
               </div>
-              <div
-                className={`absolute ${card.bg} rounded-full w-30 h-30
-           -top-5 right-1 animate-pulse`}
-              ></div>
-            </div>
-          </div>
+             
         </div>
       ))}
     </div>
