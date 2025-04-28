@@ -20,9 +20,11 @@ const Sidebars = () => {
     { name: 'Logout', path: '/logout', icons: <LogOut size={18} /> },
   ];
   const handleMenuClick = (name: string) => {
+    
     setAnimateTitle(true); 
     setTimeout(() => {
       setActiveMenu(name); 
+      document.title = name
       setAnimateTitle(false); 
     }, 300); 
   };
